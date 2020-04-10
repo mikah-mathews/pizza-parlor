@@ -63,14 +63,9 @@ $(document).ready(function() {
     console.log(clicked);
   });
 
-  $("#restart").click(function() {
-
-  });
   $("form#pizza").submit(function(event) {
     event.preventDefault();
     $("#priceOutput").empty();
-    $("#pizza").hide();
-    $("#priceOutput").show();
     var sizeInput = $("#size input[type='radio']:checked").val();
     var toppingsInput = $("input:checkbox[name=toppings]:checked").length;
     var methodInput = $("#method input[type='radio']:checked").val();
@@ -86,11 +81,19 @@ $(document).ready(function() {
     newPizza.pickUpMethodPrice(methodInput);
     if(price > 0 && sizeInput.length > 0 && toppingsInput > 0 && methodInput.length > 0) {
       $("#priceOutput").append("Your order price is $" + price);
+      $("#pizza").hide();
+      $("#Output").show();
     }
     if(clicked === false) {
       console.log("The pizza is going to be picked up");
     } else if(clicked === true) {
       $("#priceOutput").append("<br>" + "The order is to be delivered to " + completeAddress);
     }
+  });
+
+  $("#restart").click(function() {
+    $("#Output").hide();
+    $("#pizza")[0].reset();
+    $("#pizza").show();
   });
 });

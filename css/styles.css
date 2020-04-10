@@ -31,9 +31,18 @@ h1 {
   margin: 20px;
 }
 
-#priceOutput {
-  text-align: center;
+#restart {
   margin: 20px;
-  font-size: large;
+}
+
+#Output {
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   display: none;
 }
