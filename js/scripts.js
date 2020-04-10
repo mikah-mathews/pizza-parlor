@@ -43,32 +43,54 @@ function Address(streetName, cityName, stateName, zipCode) {
   this.zipCode = zipCode;
 }
 
+Address.prototype.fullAddress = function() {
+  return this.streetName + " " + this.cityName + " " + this.stateName + " " + this.zipCode;
+}
 
 
 $(document).ready(function() {
-  $("#delivery").click(function() {
+
+  var clicked = false;
+
+  $("#delivery").click(function() { // when delivery button is clicked, it will show address form
     $("#address").show();
+    clicked = true;
   });
+
   $("#pickUp").click(function() {
     $("#address").hide();
-  })
+    clicked = false;
+    console.log(clicked);
+  });
+
+  $("#restart").click(function() {
+
+  });
   $("form#pizza").submit(function(event) {
     event.preventDefault();
+    $("#priceOutput").empty();
+    $("#pizza").hide();
+    $("#priceOutput").show();
     var sizeInput = $("#size input[type='radio']:checked").val();
     var toppingsInput = $("input:checkbox[name=toppings]:checked").length;
     var methodInput = $("#method input[type='radio']:checked").val();
+    var inputtedStreetAddress = $("input#new-street-address").val();
+    var inputtedCity = $("input#city").val();
+    var inputtedState = $("input#new-state").val();
+    var inputtedZipCode = $("input#new-zip-code").val();
     var newPizza = new pizza(sizeInput, toppingsInput, methodInput);
+    var newAddress = new Address(inputtedStreetAddress, inputtedCity, inputtedState, inputtedZipCode);
+    var completeAddress = newAddress.fullAddress();
     newPizza.pizzaSizePrice(sizeInput);
     newPizza.toppingsPrice(toppingsInput);
     newPizza.pickUpMethodPrice(methodInput);
-    console.log(sizeInput.length);
-    console.log(toppingsInput);
-    console.log(methodInput.length);
     if(price > 0 && sizeInput.length > 0 && toppingsInput > 0 && methodInput.length > 0) {
-    $("#priceOutput").append("Your order price is $" + price);
-    console.log("price is working")
-    } else {
-      console.log("price is not working")
+      $("#priceOutput").append("Your order price is $" + price);
+    }
+    if(clicked === false) {
+      console.log("The pizza is going to be picked up");
+    } else if(clicked === true) {
+      $("#priceOutput").append("<br>" + "The order is to be delivered to " + completeAddress);
     }
   });
 });

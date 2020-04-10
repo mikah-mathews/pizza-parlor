@@ -27,8 +27,13 @@ h1 {
   display: none;
 }
 
+#submit {
+  margin: 20px;
+}
+
 #priceOutput {
   text-align: center;
   margin: 20px;
   font-size: large;
+  display: none;
 }
