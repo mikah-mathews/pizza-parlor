@@ -4,37 +4,38 @@ function pizza(size, toppings, pickUpMethod) {
   this.pickUpMethod = pickUpMethod;
 }
 
-pizza.prototype.size = function(s) {
+var price = 0
+
+pizza.prototype.pizzaSizePrice = function(s) {
   if(s === "small") {
-    return 10;
+   price = 10;
   } else if(s === "medium") {
-    return 12;
+    price = 12;
   } else if(s === "large") {
-    return 15;
+    price = 15;
   } else {
     console.log("something went wrong in size");
   }
 }
 
-pizza.prototype.toppings = function(amountChecked) {
-  var toppingsPrice = amountChecked * .5;
-  return toppingsPrice;
+pizza.prototype.toppingsPrice = function(amountChecked) {
+  price = price + (amountChecked * .5);
+  
 }
 
-pizza.prototype.pickUpMethod = function(selected) {
+pizza.prototype.pickUpMethodPrice = function(selected) {
   if(selected === "pickUp") {
-    return 0;
+    price = price + 0;
   } else if(selected === "delivery") {
-    return 10;
+    price = price + 10;
   } else {
     console.log("Something went wrong in pickUpMethod");
   }
 }
 
-pizza.prototype.finalPrice = function(size, toppings, pickUpMethod) {
-  var price = size.val() + toppings.val() + pickUpMethod.val();
-  return price;
-};
+// pizza.prototype.finalPrice = function(size, toppings, pickUpMethod) {
+//   console.log(price)
+// };
 
 $(document).ready(function() {
   $("form#pizza").submit(function(event) {
@@ -44,8 +45,10 @@ $(document).ready(function() {
     var toppingsInput = $("input:checkbox[name=toppings]:checked").length;
     var methodInput = $("#method input[type='radio']:checked").val();
     var newPizza = new pizza(sizeInput, toppingsInput, methodInput);
-    console.log(newPizza.size);
-    console.log(newPizza.toppings);
-    console.log(newPizza.pickUpMethod);
+    console.log("This is the price: " + price);
+    console.log(newPizza.pizzaSizePrice(sizeInput));
+    console.log(newPizza.toppingsPrice(toppingsInput));
+    console.log(newPizza.pickUpMethodPrice(methodInput));
+    console.log("This is the final price: " + price);
   });
 });
