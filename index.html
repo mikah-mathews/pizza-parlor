@@ -11,7 +11,39 @@
 </head>
 <body>
   <div class="container">
-    
+    <h1>Welcome to Mathews Pizza Parlor</h1>
+    <form id="pizza">
+      <h3>Select a pizza size</h3>
+      <div id="size">
+        <input type="radio" name="size" id="small">
+        <label for="small">Small </label>
+        <input type="radio" name="size" id="medium">
+        <label for="medium">Medium </label>
+        <input type="radio" name="size" id="large">
+        <label for="large">Large </label>
+      </div>
+      <h3>Select your toppings</h3>
+      <div id="toppings">
+        <input type="checkbox" name="toppings" id="cheese"> Cheese <br>
+        <input type="checkbox" name="toppings" id="pepperoni"> Pepperoni <br>
+        <input type="checkbox" name="toppings" id="chicken"> Chicken <br>
+        <input type="checkbox" name="toppings" id="beef"> Beef <br>
+        <input type="checkbox" name="toppings" id="ham"> Ham <br>
+        <input type="checkbox" name="toppings" id="sausage"> Sausage<br>
+        <input type="checkbox" name="toppings" id="pineapple"> Pineapple <br>
+        <input type="checkbox" name="toppings" id="bellPepper"> Bell Pepper<br>
+        <input type="checkbox" name="toppings" id="olives"> Olives<br>
+        <input type="checkbox" name="toppings" id="tomatoes"> Sun Dried Tomatoes<br>
+      </div>
+      <h3>How do you want to get your pizza?</h3>
+      <div id="method">
+        <input type="radio" name="method" id="pickUp">
+        <label for="pickUp">Pick Up from Store</label>
+        <input type="radio" name="method" id="delivery">
+        <label for="delivery">Delivery</label>
+      </div>
+      <button type="submit" id="submit"></button>
+    </form>
   </div>
 </body>
 </html>

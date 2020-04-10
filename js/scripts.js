@@ -31,8 +31,15 @@ pizza.prototype.pickUpMethod = function(selected) {
   }
 }
 
-pizza.prototype.finalPrice(size, toppings, pickUpMethod) {
-  var price = size + toppings + pickUpMethod;
+pizza.prototype.finalPrice = function(size, toppings, pickUpMethod) {
+  var price = size.val() + toppings.val() + pickUpMethod.val();
   return price;
-}
+};
 
+$(document).ready(function() {
+  $("form#pizza").submit(function(event) {
+    event.preventDefault();
+    var sizeInput = $("#size input[type='radio']:checked").val();
+    var toppings = $("input")
+  });
+});
