@@ -1,4 +1,4 @@
-#_Pizza Parlor_
+# _Pizza Parlor_
 
 #### _A website to order pizza created in Javascript_
 
