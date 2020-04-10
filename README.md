@@ -24,12 +24,16 @@ calculate the price
 
 ## Setup/Installation Requirements
 
-* _Open the page in a web browser._
+* Clone this repository.
+* Navigate to index.html file through your file interface.
+* Right click and open in the browser of your choice.
+
+* Alternatively, open the webpage at https://mikah-mathews.github.io/pizza-parlor/
 
 
 ## Known Bugs
 
-__
+__There are no known bugs at this time__
 
 ## Support and contact details
 
