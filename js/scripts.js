@@ -63,6 +63,11 @@ $(document).ready(function() {
     console.log(clicked);
   });
 
+  // ask how best to loop through radio buttons
+  $("#selectAll").click(function(){
+    $(".toppings").prop("checked", true);
+  });
+
   $("form#pizza").submit(function(event) {
     event.preventDefault();
     $("#priceOutput").empty();
