@@ -10,8 +10,14 @@ pizza.prototype.size = function(s) {
   } else if(s === "medium") {
     return "medium";
   } else if(s === "large") {
-    return "large"
+    return "large";
   } else {
-    console.log("something went wrong in size")
+    console.log("something went wrong in size");
   }
 }
+
+pizza.prototype.toppings = function(amountChecked) {
+  var toppingsPrice = toppings * .5;
+  return toppingsPrice;
+}
+
