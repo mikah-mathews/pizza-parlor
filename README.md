@@ -1,4 +1,4 @@
-_Pizza Parlor_
+#_Pizza Parlor_
 
 #### _A website to order pizza created in Javascript_
 
@@ -27,8 +27,6 @@ calculate the price
 * Clone this repository.
 * Navigate to index.html file through your file interface.
 * Right click and open in the browser of your choice.
-
-* Alternatively, open the webpage at https://mikah-mathews.github.io/pizza-parlor/
 
 
 ## Known Bugs
