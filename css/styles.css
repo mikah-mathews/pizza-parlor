@@ -1,0 +1,15 @@
+/* body {
+  text-align: center;
+} */
+
+#pizza {
+  text-align: center;
+  width: 100%;
+}
+
+#toppings {
+  width: 25%;
+  margin: 0 auto;
+  text-align: left;
+ 
+}
