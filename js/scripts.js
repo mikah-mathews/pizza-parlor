@@ -24,7 +24,7 @@ pizza.prototype.toppings = function(amountChecked) {
 pizza.prototype.pickUpMethod = function(selected) {
   if(selected === "pickUp") {
     return 0;
-  } else if(selected === "deliver") {
+  } else if(selected === "delivery") {
     return 10;
   } else {
     console.log("Something went wrong in pickUpMethod");
@@ -40,6 +40,12 @@ $(document).ready(function() {
   $("form#pizza").submit(function(event) {
     event.preventDefault();
     var sizeInput = $("#size input[type='radio']:checked").val();
-    var toppings = $("input")
+    // #toppings input[type='checkbox']:checked
+    var toppingsInput = $("input:checkbox[name=toppings]:checked").length;
+    var methodInput = $("#method input[type='radio']:checked").val();
+    var newPizza = new pizza(sizeInput, toppingsInput, methodInput);
+    console.log(newPizza.size);
+    console.log(newPizza.toppings);
+    console.log(newPizza.pickUpMethod);
   });
 });
