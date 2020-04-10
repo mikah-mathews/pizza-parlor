@@ -1,15 +1,34 @@
-/* body {
+.body {
+  background-color: skyblue;
+}
+
+h1 {
   text-align: center;
-} */
+}
 
 #pizza {
   text-align: center;
   width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin-top: 10px;
+  margin-bottom: 
 }
 
 #toppings {
   width: 25%;
   margin: 0 auto;
   text-align: left;
- 
+}
+
+#address {
+  display: none;
+}
+
+#priceOutput {
+  text-align: center;
+  margin: 20px;
+  font-size: large;
 }

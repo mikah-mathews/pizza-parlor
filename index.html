@@ -9,7 +9,7 @@
   <script src="./js/scripts.js"></script>
   <title>MATHEWS PIZZA</title>
 </head>
-<body>
+<body class="body">
   <div class="container">
     <h1>Welcome to Mathews Pizza Parlor</h1>
     <form id="pizza">
@@ -41,10 +41,28 @@
         <label for="pickUp">Pick Up from Store</label>
         <input type="radio" name="method" id="delivery" value="delivery">
         <label for="delivery">Delivery</label>
+        <div id="address">
+          <label for="new-street-address">Street Address</label>
+          <br>
+          <input type="text" id="new-street-address">
+          <br>
+          <label for="new-city">City</label>
+          <br>
+          <input type="text" id="city">
+          <br>
+          <label for="new-address">State</label>
+          <br>
+          <input type="text" id="new-state">
+          <br>
+          <label for="new-zip-code">Zip Code</label>
+          <br>
+          <input type="text" id="new-zip-code">
+        </div>
       </div>
       <button type="submit" id="submit">Order Pizza</button>
     </form>
     <div id="priceOutput">
+    
     </div>
   </div>
 </body>

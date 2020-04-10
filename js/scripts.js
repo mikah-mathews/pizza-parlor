@@ -13,14 +13,17 @@ pizza.prototype.pizzaSizePrice = function(s) {
     price = 12;
   } else if(s === "large") {
     price = 15;
-  } else {
-    console.log("something went wrong in size");
+  } else{
+    alert("Select a pizza size");
   }
 }
 
 pizza.prototype.toppingsPrice = function(amountChecked) {
-  price = price + (amountChecked * .50);
-  
+  if(amountChecked > 0) {
+    price = price + (amountChecked * .50);
+  } else {
+    alert("Select at least one topping")
+  }
 }
 
 pizza.prototype.pickUpMethodPrice = function(selected) {
@@ -29,11 +32,26 @@ pizza.prototype.pickUpMethodPrice = function(selected) {
   } else if(selected === "delivery") {
     price = price + 10;
   } else {
-    console.log("Something went wrong in pickUpMethod");
+    alert("Select a delivery method");
   }
 }
 
+function Address(streetName, cityName, stateName, zipCode) {
+  this.streetName = streetName;
+  this.cityName = cityName;
+  this.stateName = stateName;
+  this.zipCode = zipCode;
+}
+
+
+
 $(document).ready(function() {
+  $("#delivery").click(function() {
+    $("#address").show();
+  });
+  $("#pickUp").click(function() {
+    $("#address").hide();
+  })
   $("form#pizza").submit(function(event) {
     event.preventDefault();
     var sizeInput = $("#size input[type='radio']:checked").val();
@@ -43,6 +61,14 @@ $(document).ready(function() {
     newPizza.pizzaSizePrice(sizeInput);
     newPizza.toppingsPrice(toppingsInput);
     newPizza.pickUpMethodPrice(methodInput);
+    console.log(sizeInput.length);
+    console.log(toppingsInput);
+    console.log(methodInput.length);
+    if(price > 0 && sizeInput.length > 0 && toppingsInput > 0 && methodInput.length > 0) {
     $("#priceOutput").append("Your order price is $" + price);
+    console.log("price is working")
+    } else {
+      console.log("price is not working")
+    }
   });
 });
