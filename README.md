@@ -9,7 +9,7 @@
 _This program is a basic program to allow a user to
 select a pizza size, toppings, and whether or not they would
 like delivery. It then will run those selections through
-a price function to calculate the final price. _
+a price function to calculate the final price._
 
 ## _Specifications:_
 * Program will allow user to select size from 3 options
